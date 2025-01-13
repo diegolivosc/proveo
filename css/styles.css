@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* ==============================
+   Estilos de Carrusel
+============================== */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: black; /* Cambiar el fondo a negro */
+  border-radius: 50%; /* Forma circular */
+  width: 40px; /* Ajustar el tamaño */
+  height: 40px; /* Ajustar el tamaño */
+}
+
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+  background-color: #ff5722; /* Color naranja al pasar el ratón */
+}
+
+.carousel-control-prev, .carousel-control-next {
+  color: white; /* Color de los íconos */
+  z-index: 1; /* Asegura que las flechas estén por encima de otros elementos */
+}
+
+/* ==============================
+   Estilos Generales
+============================== */
+main {
+  min-height: 100vh;
+  flex-grow: 1;
+}
+
+.full-screen-background {
+  background-color: #F9F6E6; /* Color de fondo */
+}
+
+/* ==============================
+   Estilos de Login
+============================== */
+.container-login {
+  margin-top: 100px; /* Separación superior para que no se vea pegado al borde superior */
+}
+
+/*# sourceMappingURL=styles.css.map */
