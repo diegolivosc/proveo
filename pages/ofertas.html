@@ -19,42 +19,73 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Asegurarse de que todas las imágenes tengan el mismo tamaño */
+        .carousel-item img {
+            width: 100%;
+            height: 250px; /* Altura fija para todas las imágenes */
+            object-fit: cover; /* Mantiene la proporción pero recorta si es necesario */
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
+            <div class="container-fluid"> <!-- Cambié container a container-fluid para que ocupe todo el ancho -->
                 <!-- Logo -->
                 <a href="../index.html" class="navbar-brand d-flex align-items-center text-decoration-none fw-bold">Proveo</a>
     
-                <!-- Menú de navegación -->
-                <ul class="navbar-nav d-flex align-items-center ms-0"> 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Categorías">Categorías</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Vehículos</a></li>
-                            <li><a class="dropdown-item" href="#">Supermercado</a></li>
-                            <li><a class="dropdown-item" href="#">Tecnología</a></li>
-                            <li><a class="dropdown-item" href="#">Electrodomésticos</a></li>
-                            <li><a class="dropdown-item" href="#">Hogar</a></li>
-                            <li><a class="dropdown-item" href="#">Deportes</a></li>
-                            <li><a class="dropdown-item" href="#">Belleza y cuidado personal</a></li>
-                            <li><a class="dropdown-item" href="#">Herramientas</a></li>
-                            <li><a class="dropdown-item" href="#">Alimentos</a></li>    
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="ofertas.html" class="nav-link text-secondary">Ofertas</a></li>
-                    <li class="nav-item"><a href="supermercado.html" class="nav-link text-secondary">Supermercado</a></li>
-                </ul>
-
-                <!-- Formulario de búsqueda y botones de login/signup -->
-                <form class="d-flex ms-3" role="search">
+                <!-- Botón para colapsar el navbar en pantallas pequeñas -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- Barra de búsqueda para pantallas grandes -->
+                <form class="d-flex ms-auto d-none d-lg-flex" role="search">
                     <input type="search" class="form-control form-control-dark" placeholder="Buscar..." aria-label="Buscar">
                 </form>
-                <div class="ms-3">
-                    <a href="login.html" class="btn btn-success me-2" aria-label="Iniciar sesión">Login</a>
-                    <a href="sign-up.html" class="btn btn-warning" aria-label="Registrarse">Sign-up</a>
+    
+                <!-- Menú de navegación (Categorías, Ofertas, Supermercado) -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!-- Ajustamos la lista de navegación para estar alineada -->
+                        <!-- Categorías Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-secondary" href="categorias.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Categorías">
+                                Categorías
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Vehículos</a></li>
+                                <li><a class="dropdown-item" href="#">Supermercado</a></li>
+                                <li><a class="dropdown-item" href="#">Tecnología</a></li>
+                                <li><a class="dropdown-item" href="#">Electrodomésticos</a></li>
+                                <li><a class="dropdown-item" href="#">Hogar</a></li>
+                                <li><a class="dropdown-item" href="#">Deportes</a></li>
+                                <li><a class="dropdown-item" href="#">Belleza y cuidado personal</a></li>
+                                <li><a class="dropdown-item" href="#">Herramientas</a></li>
+                                <li><a class="dropdown-item" href="#">Alimentos</a></li>    
+                            </ul>
+                        </li>
+    
+                        <!-- Enlaces adicionales (Ofertas y Supermercado) -->
+                        <li class="nav-item">
+                            <a href="ofertas.html" class="nav-link text-secondary">Ofertas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="supermercado.html" class="nav-link text-secondary">Supermercado</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Menú Colapsable (Login y Sign-up) -->
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="login.html" class="btn btn-success me-2" aria-label="Iniciar sesión">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="sign-up.html" class="btn btn-warning" aria-label="Registrarse">Sign-up</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -70,113 +101,131 @@
                 <div class="carousel-inner">
                     <!-- Primer conjunto de productos -->
                     <div class="carousel-item active">
-                        <div class="d-flex justify-content-start">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
                             <!-- Producto 1 -->
-                            <article class="card" style="width: 18rem;">
-                                <img src="../images/image1.jpg" class="card-img-top" alt="Producto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 1</h5>
-                                    <p class="card-text">Descripción breve del producto.</p>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">$20.00</span>
-                                        <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                            <div class="col">
+                                <article class="card">
+                                    <img src="../images/image1.jpg" class="card-img-top img-fluid" alt="Producto 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Producto 1</h5>
+                                        <p class="card-text">Descripción breve del producto.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">$20.00</span>
+                                            <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
 
                             <!-- Producto 2 -->
-                            <article class="card" style="width: 18rem;">
-                                <img src="../images/image3.jpg" class="card-img-top" alt="Producto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 2</h5>
-                                    <p class="card-text">Descripción breve del producto.</p>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">$35.00</span>
-                                        <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                            <div class="col">
+                                <article class="card">
+                                    <img src="../images/image3.jpg" class="card-img-top img-fluid" alt="Producto 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Producto 2</h5>
+                                        <p class="card-text">Descripción breve del producto.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">$35.00</span>
+                                            <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
 
                             <!-- Producto 3 -->
-                            <article class="card" style="width: 18rem;">
-                                <img src="../images/image1.jpg" class="card-img-top" alt="Producto 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 3</h5>
-                                    <p class="card-text">Descripción breve del producto.</p>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">$40.00</span>
-                                        <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                            <div class="col">
+                                <article class="card">
+                                    <img src="../images/image1.jpg" class="card-img-top img-fluid" alt="Producto 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Producto 3</h5>
+                                        <p class="card-text">Descripción breve del producto.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">$40.00</span>
+                                            <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
 
-                            <article class="card" style="width: 18rem;">
-                                <img src="../images/image3.jpg" class="card-img-top" alt="Producto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 1</h5>
-                                    <p class="card-text">Descripción breve del producto.</p>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">$20.00</span>
-                                        <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                            <!-- Producto 4 -->
+                            <div class="col">
+                                <article class="card">
+                                    <img src="../images/image3.jpg" class="card-img-top img-fluid" alt="Producto 4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Producto 4</h5>
+                                        <p class="card-text">Descripción breve del producto.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">$50.00</span>
+                                            <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Segundo conjunto de productos -->
                     <div class="carousel-item">
-                        <div class="d-flex justify-content-start">
-                            <!-- Producto 4 -->
-                            <article class="card" style="width: 18rem;">
-                                <img src="../images/image1.jpg" class="card-img-top" alt="Producto 4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 4</h5>
-                                    <p class="card-text">Descripción breve del producto.</p>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">$50.00</span>
-                                        <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
-                                    </div>
-                                </div>
-                            </article>
-
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
                             <!-- Producto 5 -->
-                            <article class="card" style="width: 18rem;">
-                                <img src="../images/image3.jpg" class="card-img-top" alt="Producto 5">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 5</h5>
-                                    <p class="card-text">Descripción breve del producto.</p>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">$15.00</span>
-                                        <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                            <div class="col">
+                                <article class="card">
+                                    <img src="../images/image3.jpg" class="card-img-top img-fluid" alt="Producto 5">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Producto 5</h5>
+                                        <p class="card-text">Descripción breve del producto.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">$25.00</span>
+                                            <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
 
                             <!-- Producto 6 -->
-                            <article class="card" style="width: 18rem;">
-                                <img src="../images/image1.jpg" class="card-img-top" alt="Producto 6">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 6</h5>
-                                    <p class="card-text">Descripción breve del producto.</p>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">$60.00</span>
-                                        <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                            <div class="col">
+                                <article class="card">
+                                    <img src="../images/image1.jpg" class="card-img-top img-fluid" alt="Producto 6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Producto 6</h5>
+                                        <p class="card-text">Descripción breve del producto.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">$30.00</span>
+                                            <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
 
-                            <article class="card" style="width: 18rem;">
-                                <img src="../images/image3.jpg" class="card-img-top" alt="Producto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 1</h5>
-                                    <p class="card-text">Descripción breve del producto.</p>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">$20.00</span>
-                                        <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                            <!-- Producto 7 -->
+                            <div class="col">
+                                <article class="card">
+                                    <img src="../images/image3.jpg" class="card-img-top img-fluid" alt="Producto 7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Producto 7</h5>
+                                        <p class="card-text">Descripción breve del producto.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">$45.00</span>
+                                            <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
+
+                            <!-- Producto 8 -->
+                            <div class="col">
+                                <article class="card">
+                                    <img src="../images/image1.jpg" class="card-img-top img-fluid" alt="Producto 8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Producto 8</h5>
+                                        <p class="card-text">Descripción breve del producto.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">$60.00</span>
+                                            <a href="#" class="btn btn-primary btn-sm">Ver detalles</a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
                     </div>
                 </div>

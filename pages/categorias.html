@@ -24,54 +24,64 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container">
+                <div class="container-fluid"> <!-- Cambié container a container-fluid para que ocupe todo el ancho -->
                     <!-- Logo -->
                     <a href="../index.html" class="navbar-brand d-flex align-items-center text-decoration-none fw-bold">Proveo</a>
-        
-                    <!-- Menú de navegación (Categorías, Ofertas, Supermercado) justo al lado del logo -->
-                    <div class="navbar-nav d-flex align-items-center ms-0"> <!-- Eliminamos ms-3 y aplicamos ms-0 -->
-        
-                        <!-- Categorías Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Categorías">
-                                Categorías
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Vehículos</a></li>
-                                <li><a class="dropdown-item" href="#">Supermercado</a></li>
-                                <li><a class="dropdown-item" href="#">Tecnología</a></li>
-                                <li><a class="dropdown-item" href="#">Electrodomésticos</a></li>
-                                <li><a class="dropdown-item" href="#">Hogar</a></li>
-                                <li><a class="dropdown-item" href="#">Deportes</a></li>
-                                <li><a class="dropdown-item" href="#">Belleza y cuidado personal</a></li>
-                                <li><a class="dropdown-item" href="#">Herramientas</a></li>
-                                <li><a class="dropdown-item" href="#">Alimentos</a></li>    
-                            </ul>
-                        </li>
-        
-                        <!-- Enlaces adicionales (Ofertas y Supermercado) -->
-                        <a href="pages/ofertas.html" class="nav-link text-secondary">Ofertas</a>
-                        <a href="pages/supermercado.html" class="nav-link text-secondary">Supermercado</a>
-                    </div>
         
                     <!-- Botón para colapsar el navbar en pantallas pequeñas -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
         
-                    <!-- Formulario de búsqueda -->
-                    <form class="d-flex ms-3" role="search">
+                    <!-- Barra de búsqueda para pantallas grandes -->
+                    <form class="d-flex ms-auto d-none d-lg-flex" role="search">
                         <input type="search" class="form-control form-control-dark" placeholder="Buscar..." aria-label="Buscar">
                     </form>
         
-                    <!-- Botones de Login y Sign-up -->
-                    <div class="ms-3">
-                        <a href="pages/login.html" class="btn btn-success me-2" aria-label="Iniciar sesión">Login</a>
-                        <a href="pages/sign-up.html" class="btn btn-warning" aria-label="Registrarse">Sign-up</a>
+                    <!-- Menú de navegación (Categorías, Ofertas, Supermercado) -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!-- Ajustamos la lista de navegación para estar alineada -->
+                            <!-- Categorías Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-secondary" href="categorias.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Categorías">
+                                    Categorías
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Vehículos</a></li>
+                                    <li><a class="dropdown-item" href="#">Supermercado</a></li>
+                                    <li><a class="dropdown-item" href="#">Tecnología</a></li>
+                                    <li><a class="dropdown-item" href="#">Electrodomésticos</a></li>
+                                    <li><a class="dropdown-item" href="#">Hogar</a></li>
+                                    <li><a class="dropdown-item" href="#">Deportes</a></li>
+                                    <li><a class="dropdown-item" href="#">Belleza y cuidado personal</a></li>
+                                    <li><a class="dropdown-item" href="#">Herramientas</a></li>
+                                    <li><a class="dropdown-item" href="#">Alimentos</a></li>    
+                                </ul>
+                            </li>
+        
+                            <!-- Enlaces adicionales (Ofertas y Supermercado) -->
+                            <li class="nav-item">
+                                <a href="ofertas.html" class="nav-link text-secondary">Ofertas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="supermercado.html" class="nav-link text-secondary">Supermercado</a>
+                            </li>
+                        </ul>
+                        
+                        <!-- Menú Colapsable (Login y Sign-up) -->
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a href="login.html" class="btn btn-success me-2" aria-label="Iniciar sesión">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="sign-up.html" class="btn btn-warning" aria-label="Registrarse">Sign-up</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
         </header>
+        
 
         <!-- Sección Principal -->
         <main>
