@@ -1,0 +1,19 @@
+/**/
+.nav-link {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+    color: #007bff;
+}
+
+/**/
+
+#navbarNav.collapse {
+    transition: all 0.3s ease;
+}
+
+#navbarNav.show {
+    transform: translateY(0);
+}

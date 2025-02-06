@@ -1,4 +1,32 @@
 @charset "UTF-8";
+/*PAGES*/
+/* ==============================
+   Estilos de Login
+============================== */
+.container-login {
+  margin-top: 100px; /* Separación superior para que no se vea pegado al borde superior */
+}
+
+/*PRESETS*/
+/**/
+.nav-link {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+  color: #007bff;
+}
+
+/**/
+#navbarNav.collapse {
+  transition: all 0.3s ease;
+}
+
+#navbarNav.show {
+  transform: translateY(0);
+}
+
 /* ==============================
    Estilos de Carrusel
 ============================== */
@@ -18,6 +46,12 @@
   z-index: 1; /* Asegura que las flechas estén por encima de otros elementos */
 }
 
+.carousel-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
 /* ==============================
    Estilos Generales
 ============================== */
@@ -30,11 +64,14 @@ main {
   background-color: #F9F6E6; /* Color de fondo */
 }
 
-/* ==============================
-   Estilos de Login
-============================== */
-.container-login {
-  margin-top: 100px; /* Separación superior para que no se vea pegado al borde superior */
+.card-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border: none;
+}
+.card-img .img {
+  border: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
